@@ -1,0 +1,221 @@
+GET APIs:
+
+1. /hosts/short/latest/all
+
+{
+    "hosts": [
+        {
+            "hostIP": "",
+            "hostName": "Host 1",
+            "pairCount": 2,
+            "pairs": [
+											{
+											"Process-B-name": "B11",
+											"Process-B-status": "Active",
+											"Process-C-name": "C11",
+											"Process-C-status": "Active",
+											"pairID": 0,
+											"time-stamp": "2024-01-07 20:33:07",
+											"active-local-connections": 5,
+											"inactive-local-connections": 3,
+											"active-remote-connections": 4,
+											"inactive-remote-connections": 1
+											}, 
+											{
+											"Process-B-name": "B12",
+											"Process-B-status": "Inactive",
+											"Process-C-name": "C12",
+											"Process-C-status": "Active",
+											"pairID": 1,
+											"time-stamp": "2024-01-07 20:33:07",
+											"active-local-connections": 0,
+											"inactive-local-connections": 6,
+											"active-remote-connections": 3,
+											"inactive-remote-connections": 3
+											}, 
+            	    ]
+        },
+        {
+            "hostIP": "",
+            "hostName": "Host 2",
+            "pairCount": 3,
+            "pairs": [
+            		{
+									"Process-B-name": "B21",
+									"Process-B-status": "Active",
+									"Process-C-name": "C21",
+									"Process-C-status": "Active",
+									"pairID": 2,
+									"time-stamp": "2024-01-07 20:33:07",
+									"active-local-connections": 5,
+									"inactive-local-connections": 0,
+									"active-remote-connections": 4,
+									"inactive-remote-connections": 1
+        					},
+            		{
+									"Process-B-name": "B22",
+									"Process-B-status": "Active",
+									"Process-C-name": "C22",
+									"Process-C-status": "Inactive",
+									"pairID": 3,
+									"time-stamp": "2024-01-07 20:33:07",
+									"active-local-connections": 0,
+									"inactive-local-connections": 8,
+									"active-remote-connections": 4,
+									"inactive-remote-connections": 4
+        					},
+            		{
+									"Process-B-name": "B23",
+									"Process-B-status": "Inactive",
+									"Process-C-name": "C23",
+									"Process-C-status": "Inactive",
+									"pairID": 4,
+									"time-stamp": "2024-01-07 20:33:07",
+									"active-local-connections": 0,
+									"inactive-local-connections": 10,
+									"active-remote-connections": 0,
+									"inactive-remote-connections": 15
+        				},
+    	    ]
+},{
+						"hostIP": "",
+						"hostName": "Host 3",
+						"pairCount": 1,
+						"pairs": [
+								{
+									"Process-B-name": "B31",
+									"Process-B-status": "Active",
+									"Process-C-name": "C31",
+									"Process-C-status": "Active",
+									"pairID": 5,
+									"time-stamp": "2024-01-07 20:33:07",
+									"active-local-connections": 5,
+									"inactive-local-connections": 0,
+									"active-remote-connections": 4,
+									"inactive-remote-connections": 1
+									}
+			    ]
+}
+
+
+		]
+	}
+
+2. /hosts/detailed/latest/all
+
+{
+    "hosts": [
+        {
+            "hostIP": "",
+            "hostName": "",
+            "pairCount": 1,
+            "pairs": [
+            		{
+        "Process-B-name": "",
+  			"Process-B-status": "",
+  			"Process-C-name": "",
+  			"Process-C-status": "",
+  			"pairID": 0,
+  			"time-stamp": "2024-01-07 20:33:07",
+  			"List-Of-Local-Connections": [
+      				{
+          			"client-process": "nc",
+          			"client-process-state": "ESTAB",
+          			"data-rate": "calculated data rate",
+          			"client-ip-address": "127.0.0.1",
+          			"client-port": 12345,
+          			"server-ip-address": "127.0.0.1",
+          			"server-port": 43772,
+          			"server-process": "nc",
+          			"server-process-state": "ESTAB"
+      				}
+  			],
+  			"List-Of-Remote-Connections": []
+  			} 
+            	     ]
+        },
+        {
+             //same as above
+        }
+    	     ]
+}
+
+
+// for remote connetctions
+
+		
+{
+
+	"pairCount": 1,
+	"pairs": [
+			{
+					"Process-B-name": "",
+					"Process-B-status": "",
+					"pairID": 0,
+					"time-stamp": "2024-01-07 20:33:07",
+					"List-Of-Remote-Connections": [
+			{
+					"client-process": "nc",
+					"client-process-state": "ESTAB",
+					"data-rate": "calculated data rate",
+					"client-ip-address": "",
+					"client-port": 12345,
+					"server-ip-address": "",
+					"server-port": 43772,
+					"server-process": "nc",
+					"server-process-state": "ESTAB"
+				}	
+			]
+		} 
+	]
+}
+// local connections
+{
+		
+		"Process-B-name": "",
+		"Process-B-status": "",
+		"Process-C-name": "",
+		"Process-C-status": "",
+		"pairID": 0,
+		"time-stamp": "2024-01-07 20:33:07",
+		"List-Of-Local-Connections": [
+			{
+			"client-process": "nc",
+			"client-process-state": "ESTAB",
+			"data-rate": "calculated data rate",
+			"client-ip-address": "",
+			"client-port": 12345,
+			"server-ip-address": "",
+			"server-port": 43772,
+			"server-process": "nc",
+			"server-process-state": "ESTAB"
+			}	
+		]
+}
+
+
+3. /hosts/short/latest/:hostIP
+
+4. /hosts/detailed/latest/:hostIP
+
+5. /pairs/short/latest/:pairID
+
+5. /pairs/detailed/latest/:pairID
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

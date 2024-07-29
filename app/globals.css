@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.page-link {
+  @apply p-2;
+}
+
+.page-item {
+  @apply inline-block border-gray-200 border-r-2 border-t-2 border-b-2 p-2 text-sm;
+}
+
+.active {
+  @apply bg-blue-400 text-white;
+}
+
+.hidden-header {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
+
+.hidden-canvas {
+  width: 900px;
+  position: absolute;
+  left: -9999px;
+  top: -9899px;
+}
+
+.animate {
+  overflow: hidden;
+  width: auto;
+  -webkit-transition: max-width 0.5s;
+  transition: max-width 0.5s;
+}
+
+.arrow::before {
+  content: "";
+  position: absolute;
+  right: -5px;
+  bottom: -8px;
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  clip-path: polygon(100% 50%, 0 0, 0 100%);
+}
+
+.scrollable::-webkit-scrollbar {
+  display: none; /* This will hide the scrollbar in WebKit browsers like Chrome and Safari */
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.scrollable {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
